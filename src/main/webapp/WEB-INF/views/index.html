@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charshet="UTF-8" />
     <title>Form</title>
-    <meta charshet="utf-8" />
 </head>
 <body>
 <form th:object="${user}" th:action="@{/validateUser}" method="post" >
     <table>
-<!--        <input type="hidden" th:field="*{id}">-->
         <tr>
-            <td>Firt Name Nhập Tên:</td>
+            <td>Firt Name:</td>
             <td><input th:field="*{firstName}"></td>
             <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</td>
         </tr>
